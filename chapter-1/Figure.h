@@ -8,7 +8,6 @@ enum FigureType
 	QUAD
 };
 
-
 class CFigure
 {
 	protected:
