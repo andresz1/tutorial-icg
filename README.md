@@ -11,14 +11,11 @@ A largo del tutorial se usará C++ y las siguientes bibliotecas:
 
 ## Compilación
 * Los archivos de cabezera (.h o .hpp) se deben encontrar en /headers.
-* Las biblioetcas (libs) se deben encontrar en /lib.
+* Las bibliotecas (libs) se deben encontrar en /lib.
 * En cada capítulo se especificarán sus requerimientos. 
 
-### Windows con Visual Studio
+#### Windows con Visual Studio
 En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013.
 
-### Feedback
-Ideas, pull requets y reporte de errores son bienvenidos.
-
-### Licencia
-MIT
+## Soporte
+Cualquier idea o sugerencia es bienvenida, se pueden realizar tanto pull requets como apertura de problemas, que serán tratados en la brevedad por cualquier colaborador, al hacerlo se debe ser siempre conciso y objetivo.
