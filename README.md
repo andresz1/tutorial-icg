@@ -14,6 +14,12 @@ A largo del tutorial se usará C++ y las siguientes bibliotecas:
 * Las bibliotecas (libs) se deben encontrar en /lib.
 * En cada capítulo se especificarán sus requerimientos. 
 
+#### Linux
+Por hacer.
+
+#### Windows con GCC
+Por hacer.
+
 #### Windows con Visual Studio
 En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013.
 
