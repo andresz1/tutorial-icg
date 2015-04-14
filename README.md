@@ -10,8 +10,15 @@ A largo del tutorial se usará C++ y las siguientes bibliotecas:
 * [AntTweakBar](http://anttweakbar.sourceforge.net/doc/) es una biblioteca escrita en C/C++ que permite a los programadores agregar rápidamente una interfaz de usuario gráfica en las aplicaciones basadas en OpenGL o DirectX.
 
 ## Compilación
-* Los archivos de cabezera se deben encontrar en /headers.
-* Las biblioetcas se deben encontrar en /lib.
+* Los archivos de cabezera (.h o .hpp) se deben encontrar en /headers.
+* Las biblioetcas (libs) se deben encontrar en /lib.
+* En cada capítulo se especificarán sus requerimientos. 
 
 ### Windows con Visual Studio
-asdasdasasd d ads dasdas ads ads adsasdads
+En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013.
+
+### Feedback
+Ideas, pull requets y reporte de errores son bienvenidos.
+
+### Licencia
+MIT
