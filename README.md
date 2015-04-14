@@ -2,16 +2,16 @@
 
 El principal objetivo de este tutorial es guiar a los estudiantes de Introducción a la Computación Gráfica de la Universidad Central de Venezuela en el proceso de aprendizaje y práctica, dando ejemplos importantes, explicaciones y plantillas para la fácil comprensión y elaboración de sus proyectos. Además este tutorial podría ser útil para los estudiantes de otras universidades o cualquier persona interesadas en aprender lo básico de OpenGL.
 
-A largo del tutorial se usará C++ y las siguientes bibliotecas: 
+A largo del tutorial se usará `C++` y las siguientes bibliotecas: 
 * [OpenGL](https://www.khronos.org/opengl/) (Biblioteca Gráfica Abierta) es una especificación estándar que define un API (Interfaz de programación de aplicaciones) multilenguaje que permite crear aplicaciones que produzcan gráficos en 2D y 3D.
 
 * [GLFW](http://www.glfw.org/) (Biblioteca Gráfica Para Ventanas) es una biblioteca ligera y multiplataforma que permite crear ventanas con el contexto de OpenGL y manejar diversos eventos relacionados a estas.
 
-* [AntTweakBar](http://anttweakbar.sourceforge.net/doc/) es una biblioteca escrita en C/C++ que permite a los programadores agregar rápidamente una interfaz de usuario gráfica en las aplicaciones basadas en OpenGL o DirectX.
+* [AntTweakBar](http://anttweakbar.sourceforge.net/doc/) es una biblioteca escrita en `C/C++` que permite a los programadores agregar rápidamente una interfaz de usuario gráfica en las aplicaciones basadas en OpenGL o DirectX.
 
 ## Compilación
-* Los archivos de cabezera (.h o .hpp) se deben encontrar en /headers.
-* Las bibliotecas (libs) se deben encontrar en /lib.
+* Los archivos de cabezera (`.h` o `.hpp`) se deben encontrar en `/headers`.
+* Las bibliotecas (`libs`) se deben encontrar en `/lib`.
 * En cada capítulo se especificarán sus requerimientos. 
 
 #### Linux
