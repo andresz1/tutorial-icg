@@ -1,6 +1,6 @@
 ![Logo](http://190.169.70.132/wp-content/uploads/2014/06/logo1.jpg)
 
-El principal objetivo de este tutorial es guiar a los estudiantes de Introducción a la Computación Gráfica de la Universidad Central de Venezuela en el proceso de aprendizaje y práctica, dando ejemplos importantes, explicaciones y plantillas para la fácil comprensión y elaboración de sus proyectos. Además este tutorial podría ser útil para los estudiantes de otras universidades o cualquier persona interesadas en aprender lo básico de OpenGL.
+El principal objetivo de este tutorial es guiar a los estudiantes de Introducción a la Computación Gráfica de la Universidad Central de Venezuela en el proceso de aprendizaje y práctica, dando ejemplos importantes, explicaciones y plantillas para la fácil comprensión y elaboración de sus proyectos. Además este tutorial podría ser útil para los estudiantes de otras universidades o cualquier persona interesada en aprender lo básico de OpenGL.
 
 A largo del tutorial se usará `C++` y las siguientes bibliotecas: 
 * [OpenGL](https://www.khronos.org/opengl/) (Biblioteca Gráfica Abierta) es una especificación estándar que define un API (Interfaz de programación de aplicaciones) multilenguaje que permite crear aplicaciones que produzcan gráficos en 2D y 3D.
