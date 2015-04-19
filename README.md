@@ -11,7 +11,7 @@ A lo largo del tutorial se usará `C++` y las siguientes bibliotecas:
 
 * [GLEW](http://glew.sourceforge.net/) (Biblioteca de Extensión de OpenGL) es multiplataforma y de código abierto escrita en `C/C++`, proporciona mecanismos de ejecución eficientes para determinar qué extensiones de OpenGL se admiten en la plataforma de destino.
 
-* [GLM](http://glm.g-truc.net/0.9.6/index.html) (OpenGL Matemáticas) unicamente para  `C++`, provee diversas estructuras matematicas y sus respectivas operaciones basadas en las de GLSL.
+* [GLM](http://glm.g-truc.net/0.9.6/index.html) (OpenGL Matemáticas) unicamente para  `C++`, provee diversas estructuras matemáticas y sus respectivas operaciones basadas en las de GLSL.
 
 ## Compilación
 * Los archivos de cabezera (`.h` o `.hpp`) se deben encontrar en `/headers`.
