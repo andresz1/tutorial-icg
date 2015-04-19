@@ -1,7 +1,12 @@
 #include "../headers/glfw3.h"
-#include <iostream>
-#include <string>
 #include <vector>
+
+#define MIN(a,b) (((a)<(b))?(a):(b))
+#define MAX(a,b) (((a)>(b))?(a):(b))
+
+void pick(int x, int y);
+
+void updateUserInterface();
 
 void display();
 
@@ -13,8 +18,12 @@ void mouseButton(GLFWwindow* window, int button, int action, int mods);
 
 void cursorPos(GLFWwindow* window, double x, double y);
 
+void charInput(GLFWwindow* window, static unsigned int scanChar);
+
 void destroy();
 
 bool initGlfw();
+
+bool initUserInterface();
 
 int main(void);
