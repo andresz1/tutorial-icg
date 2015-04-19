@@ -33,7 +33,6 @@ void pick(int x, int y)
 		min[0] = MIN(v1[0], v2[0]);
 		min[1] = MIN(v1[1], v2[1]);
 
-
 		if (x >= min[0] && x <= max[0] && y >= min[1] && y <= max[1])
 		{
 			picked = i;
