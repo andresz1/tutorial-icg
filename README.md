@@ -27,5 +27,9 @@ Por hacer.
 #### Windows con Visual Studio
 En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013.
 
+## Herramientas
+* [Blender](http://www.blender.org/) programa multi plataforma, dedicado especialmente al modelado, iluminación, renderizado, animación y creación de gráficos tridimensionales.
+* [MSI Afterburner](http://gaming.msi.com/features/afterburner) programa para Windows, que sirve para mostrar infomarción relevante de la GPU.
+
 ## Soporte
 Cualquier idea o sugerencia es bienvenida, se pueden realizar tanto pull requets como apertura de problemas, que serán tratados en la brevedad por cualquier colaborador, al hacerlo se debe ser siempre conciso y objetivo.
