@@ -9,6 +9,10 @@ A lo largo del tutorial se usará `C++` y las siguientes bibliotecas:
 
 * [AntTweakBar](http://anttweakbar.sourceforge.net/doc/) es una biblioteca escrita en `C/C++` que permite a los programadores agregar rápidamente una interfaz de usuario gráfica en las aplicaciones basadas en OpenGL o DirectX.
 
+* [GLEW](http://glew.sourceforge.net/) es una biblioteca multiplataforma de código abierto escrita en `C/C++` que proporciona mecanismos de ejecución eficientes para determinar qué extensiones de OpenGL se admiten en la plataforma de destino.
+
+* [GLM](http://glm.g-truc.net/0.9.6/index.html) es una biblioteca para `C++` que provee diversas estructuras matematicas y sus respectivas operaciones basadas en las de GLSL.
+
 ## Compilación
 * Los archivos de cabezera (`.h` o `.hpp`) se deben encontrar en `/headers`.
 * Las bibliotecas (`libs`) se deben encontrar en `/lib`.
