@@ -11,7 +11,6 @@ class CUserInterface
 	TwBar *mUserInterface;
 	float mFigureColor[3];
 	string mFigureType;
-	bool mShow;
 
 public:
 	CUserInterface();

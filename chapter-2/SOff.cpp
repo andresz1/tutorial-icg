@@ -25,6 +25,17 @@ bool CSOff::load(string path)
 	else
 	{
 		file >> token;
-		mNumOfVertices = atoi(token.c_str());
+		mNumOfVertices = 3 * atoi(token.c_str());
+	
+		mVertices = new float[mNumOfVertices];
+
+		for (int i = 0; i < mNumOfVertices; i++)
+		{
+			file >> token;
+			mVertices[i] = atof(token.c_str());
+		}
+	
+		file.close();
+		return true;
 	}
 }

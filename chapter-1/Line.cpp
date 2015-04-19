@@ -5,6 +5,8 @@ CLine::CLine()
 	mVertices = new float*[2];
 	for (int i = 0; i < 2; ++i)
 		mVertices[i] = new float[2];
+
+	mType = LINE;
 }
 
 CLine::~CLine()

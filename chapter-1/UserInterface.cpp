@@ -15,7 +15,6 @@ CUserInterface::CUserInterface()
 	TwDefine("Figure size = '220 320'");
 
 	TwAddVarRO(mUserInterface, "meshType", TW_TYPE_STDSTRING, &mFigureType, "label='Type' readonly=true");
-	TwAddVarRW(mUserInterface, "show", TW_TYPE_BOOL16, &mShow, "label = 'Show'");
 	TwAddVarRW(mUserInterface, "color", TW_TYPE_COLOR3F, &mFigureColor[0], "label = 'Color'");
 }
 

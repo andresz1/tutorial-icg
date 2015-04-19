@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../headers/glfw3.h"
 #include <string>
 
 using std::string;

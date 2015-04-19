@@ -1,5 +1,5 @@
+#define GLFW_INCLUDE_GLU
 #include "../headers/glfw3.h"
-#include <GL\GLU.h>
 #include <vector>
 
 void updateUserInterface();

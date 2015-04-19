@@ -5,6 +5,8 @@ CQuad::CQuad()
 	mVertices = new float*[2];
 	for (int i = 0; i < 2; ++i)
 		mVertices[i] = new float[2];
+
+	mType = QUAD;
 }
 
 CQuad::~CQuad()
