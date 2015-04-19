@@ -192,7 +192,7 @@ bool initGlfw()
 	if (!glfwInit())
 		return false;
 
-	gWindow = glfwCreateWindow(gWidth, gHeight, "Simple example", NULL, NULL);
+	gWindow = glfwCreateWindow(gWidth, gHeight, "Chapter 1", NULL, NULL);
 
 	if (!gWindow)
 	{

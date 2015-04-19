@@ -2,9 +2,7 @@
 
 CFigure::CFigure()
 {
-	mColor[0] = 1.0f;
-	mColor[1] = 1.0f;
-	mColor[2] = 1.0f;
+	mColor[0] = mColor[1] = mColor[2] = 1.0f;
 }
 
 CFigure::~CFigure()

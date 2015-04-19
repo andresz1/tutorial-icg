@@ -13,7 +13,6 @@ CUserInterface::CUserInterface()
 	TwDefine("Figure visible = false");
 	TwDefine("Figure position = '20 20'");
 	TwDefine("Figure size = '220 320'");
-	//TwDefine("Figure valueswidth = fit");
 
 	TwAddVarRO(mUserInterface, "meshType", TW_TYPE_STDSTRING, &mFigureType, "label='Type' readonly=true");
 	TwAddVarRW(mUserInterface, "show", TW_TYPE_BOOL16, &mShow, "label = 'Show'");
