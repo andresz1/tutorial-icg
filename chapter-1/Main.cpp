@@ -130,10 +130,7 @@ void mouseButton(GLFWwindow* window, int button, int action, int mods)
 		float ay = gHeight - y;
 
 		if (figureSelected == NONE)
-		{
 			pick(ax, ay);
-			printf("%d\n", picked);
-		}
 		else if (figureSelected == LINE)
 		{
 			CLine *line = new CLine();
@@ -182,6 +179,8 @@ void destroy()
 {
 	for (int i = 0; i < figures.size(); i++)
 		delete figures[i];
+
+	delete userInterface;
 
 	TwTerminate();
 	glfwDestroyWindow(gWindow);
