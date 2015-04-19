@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Headers\AntTweakBar\AntTweakBar.h"
+#include "../headers/AntTweakBar.h"
 #include <iostream>
 #include <string>
 
@@ -23,4 +23,3 @@ public:
 	void setFigureType(string type);
 	float* getFigureColor();
 };
-
