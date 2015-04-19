@@ -13,6 +13,8 @@ int picked;
 
 void updateUserInterface()
 {
+	if (picked > -1)
+		models[picked]->setTranslation(userInterface->getModelTranslation());
 }
 
 void display()
@@ -20,8 +22,17 @@ void display()
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+
 	for (int i = 0; i < models.size(); i++)
-		models[i]->display();
+	{	
+		float *translation = models[i]->getTranslation();
+
+		glPushMatrix();
+			glTranslatef(translation[0], translation[1], translation[2]);
+			models[i]->display();
+		glPopMatrix();
+	}
+		
 }
 
 void reshape(GLFWwindow *window, int width, int height)
@@ -36,6 +47,8 @@ void reshape(GLFWwindow *window, int width, int height)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(45.0f, (float)gWidth / (float)gHeight, 1.0f, 1000.0f);
+
+	glMatrixMode(GL_MODELVIEW);
 }
 
 void keyInput(GLFWwindow *window, int key, int scancode, int action, int mods)
@@ -137,7 +150,7 @@ int main(void)
 {
 	gWidth = 1024;
 	gHeight = 768;
-	picked = -1;
+	picked = 0;
 
 	if (!initGlfw() || !initScene() || !initUserInterface())
 		return EXIT_FAILURE;
