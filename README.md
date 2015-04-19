@@ -29,6 +29,7 @@ En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 20
 
 ## Herramientas
 * [Blender](http://www.blender.org/) programa multi plataforma, dedicado especialmente al modelado, iluminación, renderizado, animación y creación de gráficos tridimensionales.
+
 * [MSI Afterburner](http://gaming.msi.com/features/afterburner) programa para Windows, que sirve para mostrar infomarción relevante de la GPU.
 
 ## Soporte
