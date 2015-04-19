@@ -21,6 +21,10 @@ void destroy();
 
 bool initGlfw();
 
+bool initGlew();
+
 bool initUserInterface();
+
+bool initScene();
 
 int main(void);

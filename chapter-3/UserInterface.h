@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../headers/AntTweakBar.h"
+#include "../headers/glm/glm.hpp"
 #include <iostream>
 #include <string>
 
@@ -9,7 +10,7 @@ using std::string;
 class CUserInterface
 {
 	TwBar *mUserInterface;
-	float mModelTranslation[3];
+	glm::vec3 mModelTranslation;
 
 public:
 	CUserInterface();
@@ -17,6 +18,6 @@ public:
 	void reshape();
 	void show();
 	void hide();
-	void setModelTranslation(float *modelTranslation);
-	float* getModelTranslation();
+	void setModelTranslation(glm::vec3 modelTranslation);
+	glm::vec3 getModelTranslation();
 };

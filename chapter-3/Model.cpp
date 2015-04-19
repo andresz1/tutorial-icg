@@ -20,14 +20,14 @@ void CModel::display()
 	glBindVertexArray(0);
 }
 
-void CModel::setTranslation(float *translation)
+void CModel::setTranslation(glm::vec3 translation)
 {
 	mTranslation[0] = translation[0];
 	mTranslation[1] = translation[1];
 	mTranslation[2] = translation[2];
 }
 
-float* CModel::getTranslation()
+glm::vec3 CModel::getTranslation()
 {
 	return mTranslation;
 }

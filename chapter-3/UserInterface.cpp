@@ -37,14 +37,14 @@ void CUserInterface::hide()
 	TwDefine("Figure visible = false");
 }
 
-void CUserInterface::setModelTranslation(float *modelTranslation)
+void CUserInterface::setModelTranslation(glm::vec3 modelTranslation)
 {
 	mModelTranslation[0] = modelTranslation[0];
 	mModelTranslation[1] = modelTranslation[1];
 	mModelTranslation[2] = modelTranslation[2];
 }
 
-float* CUserInterface::getModelTranslation()
+glm::vec3 CUserInterface::getModelTranslation()
 {
 	return mModelTranslation;
 }

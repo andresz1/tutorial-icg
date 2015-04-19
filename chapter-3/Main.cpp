@@ -8,9 +8,11 @@ using std::vector;
 
 GLFWwindow *gWindow;
 int gWidth, gHeight;
+CGLSLProgram * glslProgram;
 CUserInterface * userInterface;
 vector <CModel *> models;
 int picked;
+glm::mat4 projection, view;
 
 void updateUserInterface()
 {
@@ -23,17 +25,18 @@ void display()
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
 	for (int i = 0; i < models.size(); i++)
 	{	
-		float *translation = models[i]->getTranslation();
+		glm::mat4 model = glm::mat4(1.0f);
+		model = glm::translate(model, models[i]->getTranslation());
 
-		glPushMatrix();
-			glTranslatef(translation[0], translation[1], translation[2]);
+		glm::mat4 mvp = projection * view * model;
+
+		glslProgram->enable();
+			glslProgram->loadUniformMatrix("MVP", GShader::UNIFORM_SIZE_4D, glm::value_ptr(mvp));
 			models[i]->display();
-		glPopMatrix();
+		glslProgram->disable();
 	}
-		
 }
 
 void reshape(GLFWwindow *window, int width, int height)
@@ -45,11 +48,7 @@ void reshape(GLFWwindow *window, int width, int height)
 
 	userInterface->reshape();
 
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(45.0f, (float)gWidth / (float)gHeight, 1.0f, 1000.0f);
-
-	glMatrixMode(GL_MODELVIEW);
+	projection = glm::perspective(45.0f, (float)gWidth / (float)gHeight, 1.0f, 1000.0f);
 }
 
 void keyInput(GLFWwindow *window, int key, int scancode, int action, int mods)
@@ -136,6 +135,15 @@ bool initGlew()
 		printf("OpenGL Version: %s \n", glGetString(GL_VERSION));
 		printf("GLSL Version: %s \n", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
+		printf("\n\nShader: Color \n");
+
+		glslProgram = new CGLSLProgram();
+		glslProgram->loadFromFile("../shaders/Color.vert");
+		glslProgram->loadFromFile("../shaders/Color.frag");
+		glslProgram->create();
+		glslProgram->loadUniformVariables();
+		glslProgram->loadAttributeVariables();
+
 		return true;
 	}
 }
@@ -175,9 +183,7 @@ int main(void)
 
 	reshape(gWindow, gWidth, gHeight);
 
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-	gluLookAt(3.0f, 3.0f, 10.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+	view = glm::lookAt(glm::vec3(3.0f, 3.0f, 10.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 	while (!glfwWindowShouldClose(gWindow))
 	{
