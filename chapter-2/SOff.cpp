@@ -32,7 +32,7 @@ bool CSOff::load(string path)
 		for (int i = 0; i < mNumOfVertices; i++)
 		{
 			file >> token;
-			mVertices[i] = atof(token.c_str());
+			mVertices[i] = float(atof(token.c_str()));
 		}
 	
 		file.close();

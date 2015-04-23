@@ -2,6 +2,22 @@
 
 extern int gWidth, gHeight;
 
+// Global static pointer used to ensure a single instance of the class.
+CUserInterface * CUserInterface::mInterface = NULL;
+
+/**
+* Creates an instance of the class
+*
+* @return the instance of this class
+*/
+CUserInterface * CUserInterface::Instance() 
+{
+	if (!mInterface)   // Only allow one instance of class to be generated.
+		 mInterface = new CUserInterface();
+ 
+   return mInterface;
+}
+
 CUserInterface::CUserInterface()
 {
 	mUserInterface = TwNewBar("Model");
@@ -12,6 +28,11 @@ CUserInterface::CUserInterface()
 	TwDefine("Model movable = false");
 	TwDefine("Model position = '20 20'");
 	TwDefine("Model size = '220 320'");
+
+	mModelTranslation[0] = 0.0f;
+	mModelTranslation[1] = 0.0f;
+	mModelTranslation[2] = 0.0f;
+
 
 	TwAddVarRW(mUserInterface, "X", TW_TYPE_FLOAT, &mModelTranslation[0], " group='Translation' step=0.1 ");
 	TwAddVarRW(mUserInterface, "Y", TW_TYPE_FLOAT, &mModelTranslation[1], " group='Translation' step=0.1 ");

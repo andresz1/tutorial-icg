@@ -18,7 +18,7 @@ void mouseButton(GLFWwindow* window, int button, int action, int mods);
 
 void cursorPos(GLFWwindow* window, double x, double y);
 
-void charInput(GLFWwindow* window, static unsigned int scanChar);
+void charInput(GLFWwindow* window, unsigned int scanChar);
 
 void destroy();
 
