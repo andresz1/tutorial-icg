@@ -129,7 +129,7 @@ bool initUserInterface()
 	if (!TwInit(TW_OPENGL, NULL))
 		return false;
 
-	userInterface = new CUserInterface();
+	userInterface = CUserInterface::Instance();
 
 	return true;
 }

@@ -6,14 +6,19 @@
 
 using std::string;
 
+//Singleton user interface class
+
 class CUserInterface
 {
+private:
+	static CUserInterface * mInterface; //Holds the instance of the class
 	TwBar *mUserInterface;
 	float mFigureColor[3];
 	string mFigureType;
 
 public:
-	CUserInterface();
+	///Method to obtain the only instance of the calls
+	static CUserInterface * Instance();
 	~CUserInterface();
 	void reshape();
 	void show();
@@ -21,4 +26,8 @@ public:
 	void setFigureColor(float *color);
 	void setFigureType(string type);
 	float* getFigureColor();
+
+private:
+	///Private constructor
+	CUserInterface(); 
 };

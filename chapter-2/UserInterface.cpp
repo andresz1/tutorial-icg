@@ -2,6 +2,22 @@
 
 extern int gWidth, gHeight;
 
+// Global static pointer used to ensure a single instance of the class.
+CUserInterface * CUserInterface::mInterface = NULL;
+
+/**
+* Creates an instance of the class
+*
+* @return the instance of this class
+*/
+CUserInterface * CUserInterface::Instance() 
+{
+	if (!mInterface)   // Only allow one instance of class to be generated.
+		 mInterface = new CUserInterface();
+ 
+   return mInterface;
+}
+
 CUserInterface::CUserInterface()
 {
 	mUserInterface = TwNewBar("Model");
