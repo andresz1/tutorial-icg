@@ -23,7 +23,7 @@ void display()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
-	for (int i = 0; i < models.size(); i++)
+	for (unsigned int i = 0; i < models.size(); i++)
 	{	
 		float *translation = models[i]->getTranslation();
 
@@ -75,11 +75,11 @@ void mouseButton(GLFWwindow* window, int button, int action, int mods)
 
 void cursorPos(GLFWwindow* window, double x, double y)
 {
-	if (TwEventMousePosGLFW(x, y))
+	if (TwEventMousePosGLFW(int(x), int(y)))
 		return;
 }
 
-void charInput(GLFWwindow* window, static unsigned int scanChar)
+void charInput(GLFWwindow* window, unsigned int scanChar)
 {
 	if (TwEventCharGLFW(scanChar, GLFW_PRESS))
 		return;
@@ -87,7 +87,7 @@ void charInput(GLFWwindow* window, static unsigned int scanChar)
 
 void destroy()
 {
-	for (int i = 0; i < models.size(); i++)
+	for (unsigned int i = 0; i < models.size(); i++)
 		delete models[i];
 
 	delete userInterface;

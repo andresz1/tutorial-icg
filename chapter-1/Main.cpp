@@ -18,7 +18,7 @@ void pick(int x, int y)
 	picked = -1;
 	userInterface->hide();
 
-	for (int i = 0; i < figures.size(); i++)
+	for (unsigned int i = 0; i < figures.size(); i++)
 	{
 		float *v1 = figures[i]->getVertex(0);
 		float *v2 = figures[i]->getVertex(1);
@@ -66,7 +66,7 @@ void display()
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	for (int i = 0; i < figures.size(); i++)
+	for (unsigned int i = 0; i < figures.size(); i++)
 		figures[i]->display();
 }
 
@@ -126,11 +126,11 @@ void mouseButton(GLFWwindow* window, int button, int action, int mods)
 
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS && !gPress)
 	{
-		float ax = x;
-		float ay = gHeight - y;
+		float ax = float(x);
+		float ay = gHeight - float(y);
 
 		if (figureSelected == NONE)
-			pick(ax, ay);
+			pick(int(ax), int(ay));
 		else if (figureSelected == LINE)
 		{
 			CLine *line = new CLine();
@@ -157,19 +157,19 @@ void mouseButton(GLFWwindow* window, int button, int action, int mods)
 
 void cursorPos(GLFWwindow* window, double x, double y)
 {
-	if (TwEventMousePosGLFW(x, y))
+	if (TwEventMousePosGLFW(int(x), int(y)))
 		return;
 
 	if (gPress)
 	{
-		float ax = x;
-		float ay = gHeight - y;
+		float ax = float(x);
+		float ay = gHeight - float(y);
 
 		figures.back()->setVertex(1, ax, ay);
 	}
 }
 
-void charInput(GLFWwindow* window, static unsigned int scanChar)
+void charInput(GLFWwindow* window, unsigned int scanChar)
 {
 	if (TwEventCharGLFW(scanChar, GLFW_PRESS))
 		return;
@@ -177,7 +177,7 @@ void charInput(GLFWwindow* window, static unsigned int scanChar)
 
 void destroy()
 {
-	for (int i = 0; i < figures.size(); i++)
+	for (unsigned int i = 0; i < figures.size(); i++)
 		delete figures[i];
 
 	delete userInterface;

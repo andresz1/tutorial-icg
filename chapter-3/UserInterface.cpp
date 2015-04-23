@@ -13,6 +13,11 @@ CUserInterface::CUserInterface()
 	TwDefine("Model position = '20 20'");
 	TwDefine("Model size = '220 320'");
 
+	mModelTranslation[0] = 0.0f;
+	mModelTranslation[1] = 0.0f;
+	mModelTranslation[2] = 0.0f;
+
+
 	TwAddVarRW(mUserInterface, "X", TW_TYPE_FLOAT, &mModelTranslation[0], " group='Translation' step=0.1 ");
 	TwAddVarRW(mUserInterface, "Y", TW_TYPE_FLOAT, &mModelTranslation[1], " group='Translation' step=0.1 ");
 	TwAddVarRW(mUserInterface, "Z", TW_TYPE_FLOAT, &mModelTranslation[2], " group='Translation' step=0.1 ");
