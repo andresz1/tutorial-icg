@@ -155,7 +155,7 @@ void display()
 ```
 
 ### Primitivas
-OpenGL nos provee de diversas primitivas 2D y 3D, por ahora usaremos únicamente las 2D (requiere vértices 2D) utilizando glBegin y glEnd (actualmente obsoleta por el gran gasto que genera el paso constante de los elementos entre CPU y GPU). Algunas de las primitivas más usadas son:
+OpenGL nos provee de diversas primitivas 2D y 3D, por ahora usaremos únicamente las 2D (requiere vértices 2D) utilizando `glBegin` y `glEnd` (actualmente obsoleta por el gran gasto que genera el paso constante de los elementos entre CPU y GPU). Algunas de las primitivas más usadas son:
 
 * Puntos `GL_POINTS`
 * Líneas `GL_LINES`
