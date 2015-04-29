@@ -171,9 +171,19 @@ Es importante tomar en cuenta para las primitivas `GL_TRIANGLES` y `GL_QUADS` qu
 ### Coordenadas de ventana
 OpenGL no maneja la ventana como estamos acostumbrados a manipularlas, en pixeles. Internamente hace una correlación de las dimensiones a un rango entre [-1,1].
 
+<p align="center">
+  <img src ="http://s23.postimg.org/5yqdlxvp7/image.jpg" />
+</p>
+
 ### Proporción y matriz de proyección 
-Si se dibujam un cuadrado se puede notar que si se cambia el tamaño de la ventana deja de ser un cuadrado y pasa a ser un rectángulo. En la mayoría de los casos ese comportamiento es indeseado y debemos corregirlo. El problema es que no le hemos indicado a OpenGL como manipular las proporciones de nuestra ventana. Podemos corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso utilizaremos una matriz ortogonal como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortogonal. Para esto usamos la instrucción `glOrtho`.
+Si se dibujam un cuadrado se puede notar que si se cambia el tamaño de la ventana deja de ser un cuadrado y pasa a ser un rectángulo. En la mayoría de los casos ese comportamiento es indeseado y debemos corregirlo. El problema es que no le hemos indicado a OpenGL como manipular las proporciones de nuestra ventana. 
+
+Podemos corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso utilizaremos una matriz ortogonal como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortogonal. Para esto usamos la instrucción `glOrtho`.
 Como se explico anteriormente, dicha instrucción depende del tamaño de la ventana y se debe efectuar cada vez que su dimensión cambie.
+
+<p align="center">
+  <img src ="http://s7.postimg.org/v3oziu1a3/image.jpg" />
+</p>
 
 ```c++
 void reshape(GLFWwindow *window, int width, int height)
