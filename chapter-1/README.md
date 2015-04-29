@@ -198,7 +198,7 @@ void reshape(GLFWwindow *window, int width, int height)
 ```
 
 ### Figuras
-Para mantenar una buena organización del código fuente, es recomendado trabajar de forma modular, razón por la cual se crea la clase Figura. 
+Para mantenar una buena organización del código fuente, es recomendado trabajar de forma modular, razón por la cual se crea la clase figura `CFigure`, de esta pueden heredar un cojunto figuras (línea, cuadrilátero, triángulo, círculo, etc) ya que todas estas tienen atributos y metodos en común.  
 <p align="center">
   <img src ="http://s2.postimg.org/65p9a3qrt/3864fa76.png" />
 </p>
