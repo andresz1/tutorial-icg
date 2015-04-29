@@ -213,5 +213,5 @@ Para mantenar una buena organización del código fuente, es recomendado trabaja
 - [ ] Figuras :sweat:
 - [ ] Interfaz gráfica de usuario :smirk:
 - [ ] Selección de figuras :scream:
-- [ ] Extras :alien:
 - [ ] Video tutorial :interrobang:
+- [ ] Extras :alien:
