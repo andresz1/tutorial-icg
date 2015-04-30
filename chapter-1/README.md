@@ -1,5 +1,5 @@
 # Capítulo 1
-En este capítulo se abordan diversos de temas que van desde crear una ventana empleando GLFW, hasta desplegar primitivas básicas y una interfaz gráfica de usuario por pantalla. También se explican diversas nociones básicas de OpenGL enfocadas al despliegue 2D.
+En este capítulo se abordan diversos temas que van desde crear una ventana empleando GLFW, hasta desplegar primitivas básicas y una interfaz gráfica de usuario por pantalla. También se explican las nociones básicas de OpenGL enfocadas al despliegue 2D.
 
 ### Mi primera aplicación
 Lo primero que se tiene que hacer es incluir GLFW, después realizar su respectiva inicialización, crear una ventana y el contexto de OpenGL. Una vez hecho esto, tenemos que:
@@ -176,7 +176,7 @@ OpenGL no maneja la ventana como estamos acostumbrados a manipularlas, en pixele
 </p>
 
 ### Proporción y matriz de proyección 
-Si se dibujam un cuadrado se puede notar que si se cambia el tamaño de la ventana deja de ser un cuadrado y pasa a ser un rectángulo. En la mayoría de los casos ese comportamiento es indeseado y debemos corregirlo. El problema es que no le hemos indicado a OpenGL como manipular las proporciones de nuestra ventana. 
+Si se dibuja un cuadrado se puede notar que si se cambia el tamaño de la ventana pasa a ser un rectángulo. En la mayoría de los casos ese comportamiento es indeseado y se debe corregir. El problema es que no se le ha indicado a OpenGL como manipular las proporciones de nuestra ventana. 
 
 Podemos corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso utilizaremos una matriz ortogonal como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortogonal. Para esto usamos la instrucción `glOrtho`.
 Como se explicó anteriormente, dicha instrucción depende del tamaño de la ventana y se debe efectuar cada vez que su dimensión cambie.
