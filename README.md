@@ -14,7 +14,7 @@ A lo largo del tutorial se usará `C++` y las siguientes bibliotecas:
 * [GLM](http://glm.g-truc.net/0.9.6/index.html) (OpenGL Matemáticas) unicamente para  `C++`, provee diversas estructuras matemáticas y sus respectivas operaciones basadas en las de GLSL.
 
 ## Compilación
-* Los archivos de cabezera (`.h` o `.hpp`) se deben encontrar en `/headers`.
+* Los archivos de cabecera (`.h` o `.hpp`) se deben encontrar en `/headers`.
 * Las bibliotecas (`libs`) se deben encontrar en `/lib`.
 * En cada capítulo se especificarán sus requerimientos. 
 
@@ -25,7 +25,7 @@ Por hacer.
 Por hacer.
 
 #### Windows con Visual Studio
-En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013. Para versiones anteriores cambiar el conjunto de herramientas de la plataforma en propiedades de la solución.
+En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013. Para versiones anteriores cambiar el conjunto de herramientas de la plataforma en propiedades de la solución. De haber algun problema con los archivos de cabecera o bibliotecas usar [estos](https://www.dropbox.com/s/vvvodmwir219zg6/etc.zip?dl=0).
 
 ## Herramientas
 * [Blender](http://www.blender.org/) programa multi plataforma, dedicado especialmente al modelado, iluminación, renderizado, animación y creación de gráficos tridimensionales.
