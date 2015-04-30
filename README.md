@@ -25,7 +25,7 @@ Por hacer.
 Por hacer.
 
 #### Windows con Visual Studio
-En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013. Para versiones anteriores cambiar el conjunto de herramientas de la plataforma en propiedades de la solución. De haber algun problema con los archivos de cabecera o bibliotecas usar [estos](https://www.dropbox.com/s/vvvodmwir219zg6/etc.zip?dl=0).
+En la raiz del proyecto se encuentra el archivo de solución de Visual Studio 2013. Para versiones anteriores cambiar el conjunto de herramientas de la plataforma en propiedades de la solución. De haber algún problema con los archivos de cabecera o bibliotecas usar [estos](https://www.dropbox.com/s/vvvodmwir219zg6/etc.zip?dl=0).
 
 ## Herramientas
 * [Blender](http://www.blender.org/) programa multi plataforma, dedicado especialmente al modelado, iluminación, renderizado, animación y creación de gráficos tridimensionales.
