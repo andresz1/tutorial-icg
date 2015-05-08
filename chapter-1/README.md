@@ -244,7 +244,7 @@ void pick(int x, int y)
 {
 	// ...
 	
-	for (unsigned int i = 0; i < figures.size(); i++)
+	for (int i = 0; i < figures.size(); i++)
 	{
 		float *v1 = figures[i]->getVertex(0);
 		float *v2 = figures[i]->getVertex(1);
