@@ -238,6 +238,8 @@ AntTweakBar define un conjunto de funciones básicas para su uso. En un comienzo
 Existen diversos métodos para lograr este objetivo, el más simple es empleando la caja envolvente de la figura. Donde se compara el punto donde se hizo click con los puntos extremos de la figura, es decir (Xmin, Ymin) y (Xmax, Ymax). Este proceso se tiene que repetir por cada figura que se este desplegando. 
 
 ```c++
+int picked;
+
 void pick(int x, int y)
 {
 	// ...
