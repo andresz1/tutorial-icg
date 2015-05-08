@@ -41,7 +41,7 @@ bool initGlfw()
 Si GLFW inicia, la ventana es creada y vinculada con el contexto de OpenGL correctamente, podremos hacer uso de la ventana por medio del puntero `gWindow`, en caso contrario, la aplicación debe cerrarse.
 
 ### Eventos
-GLFW provee una variedad de funciones para el manejo de eventos de ventanas, para esto, se debe seleccionar una función dependiendo del evento que se quiera controlar, posteriormente, se debe especificar la ventana y la función que lo maneja. Los parametros formales de la función que maneja el evento estan relacionados con este. Sin embargo, siempre se incluye un puntero a la ventana que afecta el evento.
+GLFW provee una variedad de funciones para el manejo de eventos de ventanas, para esto, se debe seleccionar una función dependiendo del evento que se quiera controlar, posteriormente, se debe especificar la ventana y la función que lo maneja (`callback`). Los parametros formales de la función que maneja el evento estan relacionados con este. Sin embargo, siempre se incluye un puntero a la ventana que afecta el evento.
 
 ```c++
 GLFWwindow *gWindow;
@@ -203,6 +203,39 @@ Para mantenar una buena organización del código fuente, es recomendado trabaja
   <img src ="http://s2.postimg.org/65p9a3qrt/3864fa76.png" />
 </p>
 
+De modo que podriamos agrupar todas las figuras en un vector `figures`, para luego, por ejemplo, en la función `display`, hacer lo siguiente.
+
+```c++
+vector <CFigure *> figures;
+
+void display()
+{
+	// ...
+
+	for (unsigned int i = 0; i < figures.size(); i++)
+		figures[i]->display();
+}
+```
+
+Cada figura define su propia forma de despliegue, donde se hace uso del bloque `glBegin` `glEnd`, para especificar la primitiva a usar y un conjunto de vertices, antes de esto, se puede cambiar el color con `glColor`. Por ejemplo la forma de despliegue de la línea es la siguiente.
+
+```c++
+void CLine::display()
+{
+	glColor3fv(mColor);
+
+	glBegin(GL_LINES);
+		glVertex2fv(mVertices[0]);
+		glVertex2fv(mVertices[1]);
+	glEnd();
+}
+```
+
+### Interfaz gráfica de usuario
+AntTweakBar define un conjunto de funciones básicas para su uso. En un comienzo se tiene que inicializar invocando a `TwInit`, luego se crean las interfaces que se deseen y en el ciclo principal se deben desplegar todas las interfaces creadas, esto se hace mediante la función `TwDraw`. Adicionalmente, para el manejo eventos, se deben invocar diversas funciones en los `callbacks` descritos anteriormente.
+
+### Selección de figuras
+
 ### Requerimientos
 * GLFW
 * AntTweakBar
@@ -210,8 +243,8 @@ Para mantenar una buena organización del código fuente, es recomendado trabaja
 ### Por hacer
 - [x] Introducción :smile:
 - [x] Diagrama de clases :sob:
-- [ ] Figuras :sweat:
-- [ ] Interfaz gráfica de usuario :smirk:
+- [x] Figuras :sweat:
+- [x] Interfaz gráfica de usuario :smirk:
 - [ ] Selección de figuras :scream:
 - [ ] Video tutorial :interrobang:
 - [ ] Extras :alien:
