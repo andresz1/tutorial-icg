@@ -261,17 +261,7 @@ void pick(int x, int y)
 		{
 			picked = i;
 
-			userInterface->setFigureColor(figures[picked]->getColor());
-			userInterface->show();
-
-			int type = figures[picked]->getType();
-
-			if (type == LINE)
-				userInterface->setFigureType("Line");
-			else
-				userInterface->setFigureType("Quad");
-
-			break;
+			// ...
 		}
 	}
 }
