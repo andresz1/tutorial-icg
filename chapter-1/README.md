@@ -235,6 +235,47 @@ void CLine::display()
 AntTweakBar define un conjunto de funciones básicas para su uso. En un comienzo se tiene que inicializar invocando a `TwInit`, luego se crean las interfaces que se deseen y en el ciclo principal se deben desplegar todas las interfaces creadas, esto se hace mediante la función `TwDraw`. Adicionalmente, para el manejo eventos, se deben invocar diversas funciones en los `callbacks` descritos anteriormente.
 
 ### Selección de figuras
+Existen diversos métodos para lograr este objetivo, el más simple es empleando la caja envolvente de la figura. Donde se compara el punto donde se hizo click con los puntos extremos de la figura, es decir (Xmin, Ymin) y (Xmax, Ymax). Este proceso se tiene que repetir por cada figura que se este desplegando. 
+
+```c++
+void pick(int x, int y)
+{
+	// ...
+	
+	for (unsigned int i = 0; i < figures.size(); i++)
+	{
+		float *v1 = figures[i]->getVertex(0);
+		float *v2 = figures[i]->getVertex(1);
+		float max[2];
+		float min[2];
+
+		// This should be precalculated
+
+		max[0] = MAX(v1[0], v2[0]);
+		max[1] = MAX(v1[1], v2[1]);
+
+		min[0] = MIN(v1[0], v2[0]);
+		min[1] = MIN(v1[1], v2[1]);
+
+		if (x >= min[0] && x <= max[0] && y >= min[1] && y <= max[1])
+		{
+			picked = i;
+
+			userInterface->setFigureColor(figures[picked]->getColor());
+			userInterface->show();
+
+			int type = figures[picked]->getType();
+
+			if (type == LINE)
+				userInterface->setFigureType("Line");
+			else
+				userInterface->setFigureType("Quad");
+
+			break;
+		}
+	}
+}
+```
 
 ### Requerimientos
 * GLFW
@@ -245,6 +286,6 @@ AntTweakBar define un conjunto de funciones básicas para su uso. En un comienzo
 - [x] Diagrama de clases :sob:
 - [x] Figuras :sweat:
 - [x] Interfaz gráfica de usuario :smirk:
-- [ ] Selección de figuras :scream:
+- [x] Selección de figuras :scream:
 - [ ] Video tutorial :interrobang:
 - [ ] Extras :alien:
