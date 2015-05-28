@@ -178,7 +178,7 @@ OpenGL no maneja la ventana como se está acostumbrado a manipularla, en pixeles
 ### Proporción y matriz de proyección 
 Si se dibuja un cuadrado se puede notar que si se cambia el tamaño de la ventana pasa a ser un rectángulo. En la mayoría de los casos ese comportamiento es indeseado y se debe corregir. El problema es que no se le ha indicado a OpenGL como manipular las proporciones de nuestra ventana. 
 
-Se puede corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso se empleara una matriz ortogonal como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortogonal. Para esto usamos la instrucción `glOrtho`.
+Se puede corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso se empleara una matriz ortográfica como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortográfica. Para esto usamos la instrucción `glOrtho`.
 Como se explicó anteriormente, dicha instrucción depende del tamaño de la ventana y se debe efectuar cada vez que su dimensión cambie.
 
 <p align="center">
