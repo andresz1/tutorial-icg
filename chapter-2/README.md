@@ -50,7 +50,7 @@ Se debe tener en cuenta que las matrices anteriores son 4x4 y no 3x3. Esto es po
   <img src ="http://s16.postimg.org/8bc7i3gb5/image.jpg" />
 </p>
 
-Con w=1
+Con w=1.
 
 #### Vista
 
@@ -84,6 +84,10 @@ Por defecto, en OpenGL, un objeto parecera tener el mismo tamaño, sin importar 
 Sin embargo, se puede ampliar o reducir el volumen de recorte a través del uso de una matriz de proyección, cuando el volumen de recorte tiene la forma de un paralelepípedo, o una caja, se dice que se emplea una proyección ortográfica. La proyección ortográfica no modificará el tamaño de los objetos, sin importar dónde se coloca la cámara. Esta es una característica deseable para los programas de CAD o para juegos 2D.
 
 Otra matriz de proyección, que puede mejorar la sensación de mundo real, es la matriz de proyección en perspectiva, en este caso el volumen es un *frustum* y no un paralelepípedo.
+
+<p align="center">
+  <img src ="http://www.labri.fr/perso/nrougier/teaching/opengl/images/ViewFrustum.png" />
+</p>
 
 La matriz de proyección de perspectiva se especifica generalmente a través de cuatro parámetros:
 
@@ -233,3 +237,12 @@ En donde se recorre el vector de modelos, y por cada uno de ellos, se obtienen s
 ### Requerimientos
 * GLFW
 * AntTweakBar
+
+### Por hacer
+- [x] Despliegue :smile:
+- [x] Pipeline :smirk:
+- [x] Matrices :scream:
+- [x] Modelos 3D :sweat:
+- [ ] Diagrama de clases :sob:
+- [ ] FAQ :interrobang:
+- [ ] Cosas geniales, ej billboards :alien:
