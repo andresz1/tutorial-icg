@@ -50,6 +50,8 @@ Se debe tener en cuenta que las matrices anteriores son 4x4 y no 3x3. Esto es po
   <img src ="http://s16.postimg.org/8bc7i3gb5/image.jpg" />
 </p>
 
+Con w=1
+
 #### Vista
 
 Por defecto, en OpenGL, el espectador se coloca en el eje z, es como usar una cámara para tomar una foto. La cámara apunta al origen del sistema cartesiano. La dirección hacia arriba es paralela al eje Oy y en el sentido positivo de Oy.
