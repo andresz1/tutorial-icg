@@ -112,7 +112,7 @@ void reshape(GLFWwindow *window, int width, int height)
 
 ### Modelos 3D
 
-Un modelo 3D es la representación tridimensional de uno o varios objetos, el cual contiene información de geometría, conmumente vertices y caras. Adicionalmente un modelo 3D puede contener normales, coordenadas de texturas, tipo de material, etc. Dichos modelos pueden ser generador por algún algoritmo o estar distinguidos por un archivo. Existen varios formatos de archivo para representar modelos 3D. Unos de los formatos más conocidos y sencillos son el OFF y el OBJ.
+Un modelo 3D es la representación tridimensional de uno o varios objetos, el cual contiene información de geometría, conmumente vertices y caras. Adicionalmente un modelo 3D puede contener normales, coordenadas de texturas, tipo de material, etc. Dichos modelos pueden ser generador por algún algoritmo o estar distinguidos por un archivo. Existen varios formatos de archivo para representar modelos 3D. Unos de los formatos más conocidos y sencillos son el [OFF](http://segeval.cs.princeton.edu/public/off_format.html) y el [OBJ](http://en.wikipedia.org/wiki/Wavefront_.obj_file).
 
 En este tutorial se empleara una simplifación del formato OFF, llamado SOFF (creado para propositos de este tutorial). En el cual las caras siempre están compuestas por tres vertices que se encuentran especificados directamente, es decir, se podrian repetir.
 
