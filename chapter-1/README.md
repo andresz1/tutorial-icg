@@ -2,7 +2,7 @@
 En este capítulo se abordan diversos temas que van desde crear una ventana empleando GLFW, hasta desplegar primitivas básicas y una interfaz gráfica de usuario por pantalla. También se explican las nociones básicas de OpenGL enfocadas al despliegue 2D.
 
 ### Mi primera aplicación
-Lo primero que se tiene que hacer es incluir GLFW, después realizar su respectiva inicialización, crear una ventana y el contexto de OpenGL. Una vez hecho esto, tenemos que:
+Lo primero que se hace es incluir GLFW, después realizar su respectiva inicialización, crear una ventana y el contexto de OpenGL. Una vez hecho esto, se tiene que:
 
 * Vincular todos los callbacks para el manejo de eventos (cambio de tamaño de ventana, movimiento del ratón, uso del teclado, entre otros).
 * Ajustar el viewport al tamaño de la ventana.
@@ -14,7 +14,7 @@ Lo primero que se tiene que hacer es incluir GLFW, después realizar su respecti
 Para cerrar la aplicación simplemente se debe romper dicho ciclo y destruir la ventana y el contexto generado. 
 
 ### Creación de ventana y contexto
-Para crear la ventana y vincularla con el contexto de OpenGL, se hará uso de GLFW. GLFW provee un conjunto de funciones que hacen este proceso realmente sencillo. Adicionalmente, como esta biblioteca es multiplataforma no hay que preocuparse por el sistema operativo que se esté empleando.
+Para crear la ventana y vincularla con el contexto de OpenGL, se hará uso de GLFW. GLFW provee un conjunto de funciones que hacen este proceso realmente sencillo. Adicionalmente, como esta biblioteca es multiplataforma, no hay que preocuparse por el sistema operativo que se esté empleando.
 
 ```c++
 GLFWwindow *gWindow;
@@ -38,10 +38,10 @@ bool initGlfw()
 }
 ```
 
-Si GLFW inicia, la ventana es creada y vinculada con el contexto de OpenGL correctamente, podremos hacer uso de la ventana por medio del puntero `gWindow`, en caso contrario, la aplicación debe cerrarse.
+Si GLFW inicia, la ventana es creada y vinculada con el contexto de OpenGL correctamente, se puede hacer uso de la ventana por medio del puntero `gWindow`, en caso contrario, la aplicación debe cerrarse.
 
 ### Eventos
-GLFW provee una variedad de funciones para el manejo de eventos de ventanas, para esto, se debe seleccionar una función dependiendo del evento que se quiera controlar, posteriormente, se debe especificar la ventana y la función que lo maneja (`callback`). Los parametros formales de la función que maneja el evento estan relacionados con este. Sin embargo, siempre se incluye un puntero a la ventana que afecta el evento.
+GLFW provee una variedad de funciones para el manejo de eventos de ventanas, para esto, se debe seleccionar una función dependiendo del evento que se quiera controlar, posteriormente, se debe especificar la ventana y la función que lo maneja (`callback`). Los parametros formales de la función que maneja el evento estan relacionados con éste. Sin embargo, siempre se incluye un puntero a la ventana que afecta el evento.
 
 ```c++
 GLFWwindow *gWindow;
@@ -103,7 +103,7 @@ void reshape(GLFWwindow *window, int width, int height)
 ```
 
 #### Inicio y ciclo principal
-Al iniciar la aplicación  se debe realizar la invocación de la función `initGlfw`, posteriormente se tiene que invocar una sola vez la función `reshape`, ya que se debe ajustar el viewport y la matriz de proyección al tamaño inicial de la ventana. Luego cargamos la identidad a la matriz de modelo-vista (se explicará en el siguiente capítulo), a continuación se debe ejecutar el ciclo principal. 
+Al iniciar la aplicación  se debe realizar la invocación de la función `initGlfw`, posteriormente se tiene que invocar una sola vez la función `reshape`, ya que se debe ajustar el viewport y la matriz de proyección al tamaño inicial de la ventana. Luego se carga la identidad a la matriz de modelo-vista (se explicará en el siguiente capítulo), a continuación se debe ejecutar el ciclo principal. 
 
 En el ciclo principal se llama a la función de despliegue `display`, se cambia al buffer trasero (en donde se está haciendo el despliegue) con el delantero `glfwSwapBuffers(gWindow)` para que no se perciba el cambio entre el cuadro (en ingles, frame) viejo y el nuevo y se envian los eventos a la cola del sistema operativo `glfwPollEvents()`.
 
@@ -155,7 +155,7 @@ void display()
 ```
 
 ### Primitivas
-OpenGL nos provee de diversas primitivas 2D y 3D, por ahora usaremos únicamente las 2D (requiere vértices 2D) utilizando `glBegin` y `glEnd` (actualmente obsoleta por el gran gasto que genera el paso constante de los elementos entre CPU y GPU). Algunas de las primitivas más usadas son:
+OpenGL provee diversas primitivas 2D y 3D, por ahora se usaran únicamente las 2D (requiere vértices 2D) utilizando `glBegin` y `glEnd` (actualmente obsoleta por el gran gasto que genera el paso constante de los elementos entre CPU y GPU). Algunas de las primitivas más usadas son:
 
 * Puntos `GL_POINTS`
 * Líneas `GL_LINES`
@@ -169,7 +169,7 @@ Cada uno de estas primitivas reciben una serie de datos que corresponden a los p
 Es importante tomar en cuenta para las primitivas `GL_TRIANGLES` y `GL_QUADS` que a la hora de indicar los vértices que conforman a la primitiva el orden en que se realiza tiene importancia, y es que OpenGL a la hora de desplegar estas primitivas tiene en cuenta que poseen una cara trasera y una cara delantera. Una cara delantera se reconoce cuando el orden de los puntos es en contra de las agujas del reloj.
 
 ### Coordenadas de ventana
-OpenGL no maneja la ventana como estamos acostumbrados a manipularlas, en pixeles. Internamente hace una correlación de las dimensiones a un rango entre [-1,1].
+OpenGL no maneja la ventana como se está acostumbrado a manipularla, en pixeles. Internamente hace una correlación de las dimensiones a un rango entre [-1,1].
 
 <p align="center">
   <img src ="http://s23.postimg.org/5yqdlxvp7/image.jpg" />
@@ -178,7 +178,7 @@ OpenGL no maneja la ventana como estamos acostumbrados a manipularlas, en pixele
 ### Proporción y matriz de proyección 
 Si se dibuja un cuadrado se puede notar que si se cambia el tamaño de la ventana pasa a ser un rectángulo. En la mayoría de los casos ese comportamiento es indeseado y se debe corregir. El problema es que no se le ha indicado a OpenGL como manipular las proporciones de nuestra ventana. 
 
-Podemos corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso utilizaremos una matriz ortogonal como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortogonal. Para esto usamos la instrucción `glOrtho`.
+Se puede corregir este problema de muchas maneras (unas más sofisticadas que otras), pero en este caso se empleara una matriz ortogonal como matriz de proyección, para esto primero debemos cargar la identidad y luego multiplicarla por la ortogonal. Para esto usamos la instrucción `glOrtho`.
 Como se explicó anteriormente, dicha instrucción depende del tamaño de la ventana y se debe efectuar cada vez que su dimensión cambie.
 
 <p align="center">
