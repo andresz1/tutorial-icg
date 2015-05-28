@@ -28,12 +28,27 @@ Desde un punto de vista matemático, aplicar dos o más transformaciones a un ob
 Las transformaciones básicas son:
 
 ##### Traslación (T)
+<p align="center">
+  <img src ="http://s11.postimg.org/v3o3fwbgz/image.jpg" />
+</p>
+
 ##### Rotación (R)
+<p align="center">
+  <img src ="http://s27.postimg.org/81febceyb/image.jpg" />
+</p>
+
 ##### Escalamiento (S)
+<p align="center">
+  <img src ="http://s4.postimg.org/soh1b0vvh/image.jpg" />
+</p>
 
 Para generar la matriz de modelo correcta, se tendria que multiplicar en el siguiente orden las matrices anteriormente expuestas (M = T * R * S)
 
-Tenga en cuenta que las matrices anteriores son 4x4 y no 3x3. Esto es porque la matriz de traslación no se puede escribir como una matriz 3x3 y usamos un truco matemático para expresar las transformaciones anteriores como multiplicaciones de matrices. Una consecuencia interesante de trabajar con matrices 4x4 en lugar de 3x3, es que no podemos multiplicar un vértice 3D, expresado como un vector columna 3x1, con las matrices anteriores. En su lugar vamos a utilizar las llamadas *coordenadas homogéneas*, donde un vértice 3D se puede expresar como un vector columna de 4x1. Desde nuestro punto de vista, esto simplemente significa que vamos a escribir un vértice 3D como:
+Se debe tener en cuenta que las matrices anteriores son 4x4 y no 3x3. Esto es porque la matriz de traslación no se puede escribir como una matriz 3x3 y usamos un truco matemático para expresar las transformaciones anteriores como multiplicaciones de matrices. Una consecuencia interesante de trabajar con matrices 4x4 en lugar de 3x3, es que no podemos multiplicar un vértice 3D, expresado como un vector columna 3x1, con las matrices anteriores. En su lugar vamos a utilizar las llamadas *coordenadas homogéneas*, donde un vértice 3D se puede expresar como un vector columna de 4x1. Desde nuestro punto de vista, esto simplemente significa que vamos a escribir un vértice 3D como
+
+<p align="center">
+  <img src ="http://s16.postimg.org/8bc7i3gb5/image.jpg" />
+</p>
 
 #### Vista
 
