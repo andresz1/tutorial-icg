@@ -23,8 +23,50 @@ En el cápitulo anterior se describío como se puede modelar de manera genérica
   <img src ="http://3dgep.com/wp-content/uploads/2014/01/OpenGL-4.0-Programmable-Shader-Pipeline1.png" />
 </p>
 
-En la actualidad diversas etapas del pipeline mostrado en la figura anterior, son programables, es decir
+En la actualidad diversas etapas del pipeline mostrado en la figura anterior, son programables, se listan a continuación.
 
+* Vertex Shader: También conocido como procesador de vertices, se encarga de llevar a cabo todas las operaciones sobre los vértices pertenecientes a los modelos que componen una escena dentro de una aplicación. Es una etapa obligatoria.
+
+* Tessellation Shader: Estos shaders reciben los datos que provienen del vertex shader, en esta etapa la morfología de los objetos se describe mediante un nuevo tipo de dato denominado parches, estos parches son teselados por este shader, produciendo modelos de mayor resolución. Es una etapa opcional.
+
+* Geometry Shader: El geometry shader se encarga de trabajar con las primitivas gráficas elementales directamente. En el, el programador tiene la potestad de crear nuevas primitivas antes de la etapa de rasterización. Representa una etapa adicional dentro del pipeline gráfico.
+
+* Fragment Shader: En este shader es donde el programador tiene control total sobre cada uno de los fragmentos de la pantalla y toma la decisiones acerca de que color va a tener cada uno de ellos o de llevar a cabo un proceso de descarte.
+
+Una vez que se haya decidido cuales etapas se van a manejar, se deben tomar cada uno de estos shaders asociados a dichas etapas escritos en GLSL, para cargarlos en la aplicación como un `string`, compilarlos y adjuntarselos a un programa que será el que posteriormente enlazaremos dentro de nuestra aplicación, para enviar los datos al pipeline gráfico. La clase encargada de representar al programa se llama `CGLSLProgram`.
+
+Inicialización
+```c++
+bool initGlew()
+{
+  // ...
+  
+  glslProgram = new CGLSLProgram();
+  glslProgram->loadFromFile("../shaders/Color.vert");
+  glslProgram->loadFromFile("../shaders/Color.frag");
+  glslProgram->create();
+  glslProgram->loadUniformVariables();
+  glslProgram->loadAttributeVariables();
+  
+  // ...
+}
+```
+
+Uso
+```c++
+void display()
+{
+  // ...
+  
+  glslProgram->enable();
+  
+    // ...
+    
+  glslProgram->disable();
+  
+  // ...
+}
+```
 ### Requerimientos
 * GLFW
 * AntTweakBar
